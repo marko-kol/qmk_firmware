@@ -7,5 +7,5 @@ Features:
 - The OLED on the slave side shows an image of an A10 Warthog.
 - Left encoder controls volume up/down/mute. Right encoder PGUP/PGDOWN/caps lock.
 - Via support
-
+- Tap Dance enabled
 
