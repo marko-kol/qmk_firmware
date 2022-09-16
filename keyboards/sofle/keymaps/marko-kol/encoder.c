@@ -21,19 +21,36 @@
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLD);
-        } else {
-            tap_code(KC_VOLU);
-        }
-    } else if (index == 1) {
-        if (clockwise) {
-            tap_code(KC_PGUP);
-        } else {
-            tap_code(KC_PGDOWN);
+        if (layer_state_is(1)) {
+            if (clockwise) {
+                tap_code(KC_VOLD);
+            } else {
+                tap_code(KC_VOLU);
+            }
+        } else if (layer_state_is(3)) {
+            if (clockwise) {
+                tap_code16(C(KC_LEFT));
+            } else {
+                tap_code16(C(KC_RGHT));
+            }
         }
     }
-    return true;
+    else if (index == 1) {
+        if (layer_state_is(1)) {
+            if (clockwise) {
+                tap_code(KC_PGUP);
+            } else {
+                tap_code(KC_PGDOWN);
+            }
+        } else if (layer_state_is(3)) {
+            if (clockwise) {
+                tap_code16(C(KC_Z));
+            } else {
+                tap_code16(C(KC_Y));
+            }
+        }
+    }
+    return false;
 }
 
 #endif
