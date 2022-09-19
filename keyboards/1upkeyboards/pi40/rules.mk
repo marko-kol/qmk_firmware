@@ -1,8 +1,7 @@
 # MCU name
-MCU = atmega32u4
-
-# Bootloader selection
-BOOTLOADER = atmel-dfu
+MCU = RP2040
+BOOTLOADER = rp2040
+BOARD = GENERIC_RP_RP2040
 
 # Build Options
 #   change yes to no to disable
@@ -14,5 +13,14 @@ CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = no            # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
-RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
+RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
+
+RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_DRIVER = WS2812
+
+WS2812_DRIVER = vendor
+ENCODER_ENABLE = yes
+
+OLED_ENABLE     = yes
+OLED_DRIVER     = SSD1306
